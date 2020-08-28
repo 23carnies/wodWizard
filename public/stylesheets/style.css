@@ -1,4 +1,5 @@
 body {
+  text-align: center;
   background-color: rgb(91, 94, 93);
   font-family: 'Crimson Text', serif;
 }
@@ -9,4 +10,11 @@ body {
 
 h1, h2, h3 {
   font-family: 'Racing Sans One', cursive;
+}
+
+li {
+  list-style-type: none;
+}
+#regUsers {
+  margin-top: 100px;
 }

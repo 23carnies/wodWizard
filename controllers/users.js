@@ -2,12 +2,12 @@ const User = require('../models/user');
 
 module.exports = {
   index,
-  showGoals
+  createWod
   
 }
 
-function showGoals(req, res) {
-  res.redirect('/users/goals', {title: 'Goals'})
+function createWod(req, res) {
+  res.redirect('/users/createWod', {title: 'Create Wod'})
 }
 
 function index(req, res) {

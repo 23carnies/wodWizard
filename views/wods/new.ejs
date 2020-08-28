@@ -1,0 +1,39 @@
+
+<%- include('../partials/header.ejs') %> 
+
+
+<h2>Create a Wod</h2>
+    <form action="/" method="POST">
+        <label>Airline:
+            <select name="airline" class="form-control">
+                <option value="Delta">Delta</option>
+                <option value="American">American</option>
+                <option value="Southwest">Southwest</option>
+                <option value="United">United</option>
+            </select>
+        </label><br>
+        <label>Airport
+            <select name="airport" class="form-control">
+                <option value="ATL">ATL</option>
+                <option value="AUS">AUS</option>
+                <option value="DEN" selected>DEN</option>
+                <option value="DFW">DFW</option>
+                <option value="LAX">LAX</option>
+                <option value="SAN">SEA</option>
+            </select>
+        </label><br>
+        <label>Flight Number:
+            <input type="number" min="10" max="9999" name="flightNo" class="form-control">
+        </label><br>
+        <label>Date:
+            <input type="datetime-local" name="departs" 
+                id="departs" class="form-control"
+                value="<% new Date() %>">
+        </label>
+        <input type="submit" value="Add Flight" class="btn btn-dark" id="addFlight">
+    </br>
+    <a href="/flights" class="btn btn-dark goBack">Go Back</a>
+    </form>
+
+<%- include('../partials/footer.ejs') %> 
+

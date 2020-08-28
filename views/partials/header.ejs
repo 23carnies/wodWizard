@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>wodWizard | <%= title %></title>
+    <title>wodWizard | </title>
     <link href="https://fonts.googleapis.com/css2?family=Calligraffitti&family=Crimson+Text:wght@400;700&family=Racing+Sans+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="stylesheets/style.css">
+    <script defer src="scripts/main.js"></script>
 </head>
 <body>
     <div class="navbar-fixed">
         <nav>
           <div class="navbar navbar-expand-sm navbar-nav navbar-light bg-light">
-            <a href="" class="navbar-brand">Users</a>
+            <a href="/index" class="navbar-brand" id="logo">wodWizard</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -20,20 +21,18 @@
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
                         <% if (user) { %>
-                            <a class="nav-link" href="/auth/logout">Log Out</a>
+                            <a class="nav-link" href="/auth/logout">Log Out</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="/wods/new">Enter Wod</a></li>
+                    <!-- <li class="nav-item active"><a class="nav-link" href="/wods/new">Enter Wod</a></li> -->
+
                         <% } else { %>
-                            <a class="nav-link" href="/auth/google">Login with Google</a>
+                            <li><a class="nav-link" href="/auth/google">Login with Google</a>
                         <% } %>
                     </li>
-                    <li class="nav-item active"><a class="nav-link" href="/users/goals">Goals</a></li>
                 </ul>
               </div>
             </div>
         </nav>
       </div>
-      <ul>Registered Users:
-        <% users.forEach(u => { %>
-          <li><%= u.name %></li>
-        <% }) %>
-      </ul>
+     
     

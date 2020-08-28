@@ -4,7 +4,7 @@ const users = require('../controllers/users');
 
 // GET /users
 router.get('/', usersCtrl.index);
-router.get('/', usersCtrl.showGoals)
+router.get('/createWod', usersCtrl.createWod)
 
 
 module.exports = router;
