@@ -37,6 +37,8 @@ Due to Covid19, my very active 70+ father is no longer going to the gym. He lame
 ![ERD](./public/resources/ERD-2.png)
 Original ER Diagram
 
+![Updated ER Diagram](./public/resources/ERD-2Updated.png)
+
 ![WireFrame](./public/resources/Wireframe2-Entry-Add-Workout.png)
 Wireframe of entry and add workout pages
 
