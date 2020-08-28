@@ -1,0 +1,12 @@
+body {
+  background-color: rgb(91, 94, 93);
+  font-family: 'Crimson Text', serif;
+}
+
+#logo {
+  font-family: 'Calligraffitti', cursive;
+}
+
+h1, h2, h3 {
+  font-family: 'Racing Sans One', cursive;
+}
