@@ -1,4 +1,7 @@
-<form action=""
+<form action="" method="POST" enctype="multipart/form-data"></form>
+<label>Name:
+    <input type="text" name="name" id="name">
+</label><br>
 <label>Body Zone:
     <select name="bodyZone" class="form-control">
         <option value="legs">Legs</option>
@@ -10,4 +13,10 @@
         <option value="fullBody">Full Body/Cardio</option>
     </select>
 </label><br>
-></form>
+<label>Description:
+    <input type="text" name="description" id="description" size="40">
+</label><br>
+<label>Image:
+    <input type="file" name="image" id="image">
+</label>
+</form>

@@ -3,8 +3,8 @@ const passport = require('passport');
 
 
 // The root route renders our only view
-router.get('/', function(req, res) {
-  res.redirect('/users');
+router.get('/wods/show', function(req, res) {
+  res.redirect('/wods/show');
 });
 
 router.get('/google', passport.authenticate(
@@ -15,7 +15,7 @@ router.get('/google', passport.authenticate(
 router.get('/google/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect : '/',
+    successRedirect : '/wods/show',
     failureRedirect : '/'
   }
 ));
