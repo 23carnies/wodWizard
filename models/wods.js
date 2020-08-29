@@ -6,12 +6,13 @@ const wodSchema = new Schema ({
     date: {type: Date, default: Date.now},
     wodType: {type: String,
         enum: ['Strength', 'Cardio', 'Mix']},
-    wodStyle: {type: String},
-    bodyZone: {type: String, 
-        enum: ['Legs', 'Arms', 'Chest', 'Back', 'Core', 'Shoulders', 'Full Body/Cardio']},
-    movement: {type: String},
+    wodStyle: {type: String,
+        enum: ['AMRAP', 'EMOM', 'FOR TIME', 'E2MOM', 'FOR QUALITY']},
+    movement: {type: Schema.Types.ObjectId, ref: 'Movement'},
     duration: {type: Number},
     modifications: {type: String}
 }, {
     timestamps: true
 })
+
+module.exports = mongoose.model('Wod', wodSchema)
