@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>wodWizard | </title>
+    <title>wodWizard | <%= title %></title>
     <link href="https://fonts.googleapis.com/css2?family=Calligraffitti&family=Crimson+Text:wght@400;700&family=Racing+Sans+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="stylesheets/style.css">
-    <script defer src="scripts/main.js"></script>
+    
 </head>
 <body>
     <div class="navbar-fixed">
@@ -22,8 +22,12 @@
                     <li class="nav-item active">
                         <% if (user) { %>
                             <a class="nav-link" href="/auth/logout">Log Out</a></li>
-                    <li class="nav-item active"><a class="nav-link" href="/wods/new">Enter Wod</a></li>
                     <li class="nav-item active"><a class="nav-link" href="/movements/new">Enter Movement</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="/wods/new">Enter Wod</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="#">Find Friends</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="#">Profile</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="#">Goals</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="#">Baseline Wods</a></li>
 
                         <% } else { %>
                             <li><a class="nav-link" href="/auth/google">Login with Google</a>

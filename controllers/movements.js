@@ -8,5 +8,9 @@ module.exports = {
 
 
 function newMovement(req, res) {
-    res.redirect('/movements/new')
+    Movement.find({}, (err, movements) => {
+        res.render('movements/new', {
+            title: 'Add Movement'
+        })
+    })
 }

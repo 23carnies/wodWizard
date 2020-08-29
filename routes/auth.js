@@ -2,10 +2,12 @@ const router = require('express').Router();
 const passport = require('passport');
 
 
-// The root route renders our only view
-router.get('/wods/show', function(req, res) {
-  res.redirect('/wods/show');
-});
+// // The root route renders our only view
+// router.get('/', function(req, res) {
+//   res.redirect('/wods/show', {
+//     title: 'Today\'s Wod', 
+//     user: req.user})
+// });
 
 router.get('/google', passport.authenticate(
   'google',
@@ -15,7 +17,7 @@ router.get('/google', passport.authenticate(
 router.get('/google/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect : '/wods/show',
+    successRedirect : '/wods',
     failureRedirect : '/'
   }
 ));
