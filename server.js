@@ -45,10 +45,10 @@ app.use(passport.session());
 
 // mount all routes with appropriate base paths
 app.use('/', indexRouter)
-app.use('/users', usersRouter);
 app.use('/auth', authRouter);
 app.use('/wods', wodsRouter)
 app.use('/movements', movementsRouter)
+app.use('/users', usersRouter);
 
 
 

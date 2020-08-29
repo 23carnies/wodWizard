@@ -1,12 +1,14 @@
-<form action="" method="POST" enctype="multipart/form-data"></form>
+<%- include('../partials/header') %> 
+
+<form action="/movements/new" method="POST">
 <label>Name:
     <input type="text" name="name" id="name">
 </label><br>
 <label>Body Zone:
     <select name="bodyZone" class="form-control">
-        <option value="legs">Legs</option>
+        <option value="legs" selected>Legs</option>
         <option value="arms">Arms</option>
-        <option value="chest" selected>Chest</option>
+        <option value="chest">Chest</option>
         <option value="back">Back</option>
         <option value="core">Core</option>
         <option value="shoulders">Shoulders</option>
@@ -14,9 +16,12 @@
     </select>
 </label><br>
 <label>Description:
-    <input type="text" name="description" id="description" size="40">
+    <textarea rows = "5" cols = "60" name = "description" placeholder="Enter detials here..."></textarea>
 </label><br>
 <label>Image:
     <input type="file" name="image" id="image">
 </label>
+<input type="submit" value="Add Movement">
 </form>
+
+<%- include('../partials/footer') %> 
