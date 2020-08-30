@@ -49,6 +49,7 @@ app.use('/auth', authRouter);
 app.use('/wods', wodsRouter)
 app.use('/movements', movementsRouter)
 app.use('/users', usersRouter);
+app.use('/goals', goalsRouter)
 
 
 

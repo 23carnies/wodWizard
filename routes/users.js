@@ -4,7 +4,8 @@ const usersCtrl = require('../controllers/users');
 
 // GET /users
 router.get('/', isLoggedIn, usersCtrl.index);
-router.get('/createWod', isLoggedIn, usersCtrl.createWod)
+// router.get('/createWod', isLoggedIn, usersCtrl.createWod)
+router.get('/:id', isLoggedIn, usersCtrl.showProfile)
 
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) return next();

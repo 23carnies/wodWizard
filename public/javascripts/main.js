@@ -1,13 +1,12 @@
-const wodBtn = document.getElementById('wod')
-const showWodEl = document.getElementById('showWod')
-
-wodBtn.addEventListener('click', () => {
-    fetch('https://wger.de/api/v2/')
-    .then((response) => {
-        return response.json
-    })
-    .then((data) => {
-        let exercise = data.exercise
-        showWodEl.innerText
-    })
-})
+function openTabs(e) {
+    let tabNav, tabContent
+    tabContent = document.getElementsByClassName('tab-content')
+    for(let i=0;i<tabContent.length;i++) {
+        tabContent[i].style.display = 'none'
+    }
+    tabNav = document.getElementsByClassName('tab-nav')
+    for(let i=0;i<tabNav.length;i++) {
+        tabNav[i].className = tabNav[i].className.replace(' active', '')
+    }
+    
+}

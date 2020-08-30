@@ -1,11 +1,11 @@
 body {
   text-align: center;
   background-color: rgb(91, 94, 93);
-  font-family: 'Crimson Text', serif;
+  font: 14px 'Crimson Text', serif;
 }
 
 #logo {
-  margin-left: 20px;
+  margin-left: 1.5rem;
   font-family: 'Calligraffitti', cursive;
 }
 
@@ -17,5 +17,28 @@ li {
   list-style-type: none;
 }
 #regUsers {
-  margin-top: 100px;
+  margin-top: 7rem;
+}
+
+.card {
+  margin: 2rem auto;
+  padding: 2rem;
+  width: 540px;
+  min-height: 400px;
+  overflow: scroll;
+  background-color: rgb(206, 174, 163);
+}
+
+.card-title {
+  margin: 1rem 0;
+}
+
+tab-content {
+  
+  padding: .5rem 1rem;
+
+}
+
+span {
+  color: blue;
 }

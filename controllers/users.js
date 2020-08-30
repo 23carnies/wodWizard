@@ -5,13 +5,23 @@ const User = require('../models/user')
 
 module.exports = {
   index,
-  createWod
+  //createWod
+  showProfile
   
 }
 
-function createWod(req, res) {
-  res.redirect('/users/createWod', {title: 'Create Wod'})
+function showProfile(req, res) {
+  User.findById(req.user._id).populate('friends').then((user) => {
+    res.render('users/profile', {
+      title: 'Profile',
+      user
+    })
+  })
 }
+
+// function createWod(req, res) {
+//   res.redirect('/users/createWod', {title: 'Create Wod'})
+// }
 
 function index(req, res) {
   User.find({})
