@@ -1,6 +1,7 @@
 const User = require('../models/user')
 const Wod = require('../models/wod')
 const Movement = require('../models/movement')
+const wod = require('../models/wod')
 
 module.exports = {
     index,
@@ -9,14 +10,17 @@ module.exports = {
 }
 
 function create(req, res) {
-    Movement.find({}, (err, movements) => {
+    req.body.createdBy = req.user.name
+    req.body.avatar = req.user.avatar
+    Wod.create(req.body) 
+    .then(wod => {
         res.render('wods/new', {
             title: 'Add Wod',
-            user: req.user,
-            movements
+            user: req.user
         })
     })
 }
+
 
 function newWod(req, res) {
     Movement.find({}, (err, movements) => {

@@ -6,8 +6,10 @@
     <form action="/wods/new" method="POST">
         <label>Title:
             <input type="text" name="wodTitle" id="wodTitle" placeholder="Name your wod">
-        </label>
+        </label><br>
         <input type="date" name="date" id="date" hidden>
+        <input type="text" name="createdBy" id="createdBy" hidden>
+        <input type="text" name="avatar" id="avatar" hidden>
         <label>Workout Type:
             <select name="wodType" class="form-control">
                 <option value="strength">Strength</option>
@@ -17,18 +19,20 @@
         </label><br>
         <label>Workout Style:
             <select name="wodStyle" id="wodStyle" class="form-control">
+                <option value="Rounds">X Rounds</option>
                 <option value="FOR_TIME">FOR TIME</option>
                 <option value="EMOM">EMOM</option>
                 <option value="AMRAP">AMRAP</option>
                 <option value="E2MOM">E2MOM</option>
-                <option value="FOR_QUALITY">FOR QUALITY</option>        
+                <option value="FOR_QUALITY">FOR QUALITY</option>     
+                <option value="FOR_DISTANCE">FOR DISTANCE</option>   
             </select>
-        </label>
-        <label>Movement:
-            <input type="text" name="movement" class="form-control">
+        </label><br>
+        <label>Movements:
+            <textarea name="movements" id="movements" cols="60" rows="5"></textarea>
         </label><br>
         <label>Duration:
-            <input type="number" name="duration" 
+            <input type="text" name="duration" 
                 id="duration" class="form-control">
         </label>
         <input type="submit" value="Add Wod" class="btn btn-dark" id="addWod">
