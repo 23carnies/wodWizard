@@ -3,10 +3,9 @@
 <h1>user profile</h1>
     
     <!-- Body Content User Info -->
-    <div class="card-body">
-      <div class="tab-pane show active fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-home-tab">
-        <h4 class="card-title">Name: <%= user.name %></h4>
-        <img src="" alt="">
+    <div class="">
+        <h4 class="">Name: <%= user.name %></h4>
+        <img src="<%= user.avatar %> " alt="User Photo from Google" class="userPhoto">
         <p class="card-text">Bio: <%= user.bio %></p>
         
     <!-- Put Goals Here -->
@@ -22,12 +21,13 @@
         </thead>
         <tbody>
           <% user.goals.forEach((g) => { %>
-            <tr scope="row"></tr>
-            <td><%= g.title %></td>
-            <td><%= g.content %></td>
-            <td><%= g.goalDate %></td>
-            <td><%= g.complete %></td>
+            <tr scope="row">
+              <td><%= g.title %></td>
+              <td><%= g.content %></td>
+              <td><%= g.goalDate.toLocaleString().split(',')[0] %></td>
+              <td><%= g.complete %></td>
           <% })  %> 
+            </tr>
         </tbody>
       </table>
     <% } %>  
@@ -38,8 +38,7 @@
     </div>
 
     <!-- Body Content Update User -->
-    <div class="card-body">
-      <div class="tab-pane show fade active" id="nav-update" role="tabpanel" aria-labelledby="nav-update-tab">
+    <div class="">
         <form action="/users/profile?_method=PUT" method="POST">
           <label>Moniker: 
             <input type="text" name="moniker" id="userMoniker" class="form-control" value="<%= user.alias %>">

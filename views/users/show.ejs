@@ -1,0 +1,19 @@
+<%- include('../partials/header') %>
+
+<h1>find frineds </h1>
+
+<div class="">
+  <img id="avatarPhoto" style="height: 18rem;" class="" src="<%= userInfo.avatar ? userInfo.avatar : 'http://theoldreader.com/kittens/300/300/'  %>" alt=" image cap">
+  <div class="">
+  </div>
+  <div class="">
+    <h5 class=""><%= userInfo.name %></h5>
+    <p class="">Joined: <%= userInfo.createdAt.toLocaleString().split(',')[0] %></p>
+    
+    
+    <!-- This is where we'll iterate over the games with a forEach -->
+    <!-- This is where we'll render buttons to add/remove a user as a friend -->
+  </div>
+</div>
+
+<%- include('../partials/footer') %>

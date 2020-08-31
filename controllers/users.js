@@ -6,8 +6,18 @@ const User = require('../models/user')
 module.exports = {
   index,
   showProfile,
-  update
-  
+  update,
+  show
+}
+
+function show(req, res) {
+  User.findById(req.params.id).then((userInfo) => {
+    res.render('users/show', {
+      title: 'Find Friends', 
+      userInfo,
+      user: req.user
+    })
+  })
 }
 
 function update(req, res) {
