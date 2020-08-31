@@ -1,29 +1,7 @@
 <%- include('../partials/header.ejs') %> 
 
 <h1>user profile</h1>
-
-<div class="card text-center">
-  <!-- Card Nav -->
-    <div class="card-header">
-      <ul class="nav nav-tabs card-header-tabs" role="tablist">
-        <!-- User Info -->
-        <li class="nav-item tab-nav">
-          <a class="nav-link show active" id="nav-profile-tab" data-toggle="tab" role="tab" aria-controls="nav-profile" href="#nav-profile">Me</a>
-        </li>
-        <!-- Update Info -->
-        <li class="nav-item tab-nav">
-          <a class="nav-link" id="nav-goals-tab" data-toggle="tab" role="tab" aria-controls="nav-goals" href="#nav-goals">Goals</a>
-        </li>
-        <!-- Goals -->
-        <li class="nav-item tab-nav">
-          <a class="nav-link" id="nav-friends-tab" data-toggle="tab" role="tab" aria-controls="nav-friends" href="#nav-friends">Friends</a>
-        </li>
-        <!-- Firends -->
-        <li class="nav-item tab-nav">
-          <a class="nav-link" id="nav-update-tab" data-toggle="tab" role="tab" aria-controls="nav-update" href="#nav-update">Update Me</a>
-        </li>
-      </ul>
-    </div>
+    
     <!-- Body Content User Info -->
     <div class="card-body">
       <div class="tab-pane show active fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-home-tab">
@@ -31,35 +9,6 @@
         <p class="card-text">Bio: <%= user.bio %></p>
         
         <!-- Put Goals Here -->
-        
-      </div>
-    </div>
-    
-    <!-- Body Content Goals Tab -->
-    <div class="card-body" >
-      <div class="tab-pane show fade" id="nav-goals" role="tabpanel" aria-labelledby="nav-goals-tab">
-        <h5>Goals should be SMART: <span>S</span>pecific, <span>M</span>easurable, <span>A</span>chievable, <span>R</span>elevant, and <span>T</span>ime Bound</h5>
-        <form action="/users/profile" method="POST">
-          <label>Goal:
-            <input type="text" name="title" id="inputGoal" class="form-control">
-          </label><br>
-          <label>Details:
-            <textarea name="content" id="goalContent" cols="30" rows="2" class="form-control"></textarea>
-          </label><br>
-          <label>Complete By:
-            <input type="date" name="goalDate" id="goalDate" class="form-control">
-          </label><br>
-          <label>Achieved?
-            <input type="checkbox" name="complete" id="completeGoal" class="form-control">
-          </label><br>
-          <input type="submit" name="Submit" class="btn btn-dark">
-        </form>
-      </div>
-    </div>
-
-    <!-- Body Content Friends Tab -->
-    <div class="card-body" >
-      <div class="tab-pane show fade" id="nav-friends" role="tabpanel" aria-labelledby="nav-friends-tab">
         
       </div>
     </div>
@@ -81,8 +30,5 @@
         </form>
       </div>
     </div>
-
-    
-</div>
 
 <%- include('../partials/footer.ejs') %> 

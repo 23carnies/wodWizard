@@ -5,7 +5,6 @@ const User = require('../models/user')
 
 module.exports = {
   index,
-  //createWod
   showProfile
   
 }
@@ -18,10 +17,6 @@ function showProfile(req, res) {
     })
   })
 }
-
-// function createWod(req, res) {
-//   res.redirect('/users/createWod', {title: 'Create Wod'})
-// }
 
 function index(req, res) {
   User.find({})

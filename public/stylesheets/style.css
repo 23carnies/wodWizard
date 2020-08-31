@@ -1,6 +1,10 @@
 body {
   text-align: center;
   background-color: rgb(91, 94, 93);
+  background-image: url(/images/barbell.png);
+  background-repeat: repeat-y;
+  background-position: bottom;
+  /* fix size in mobilebar */
   font: 14px 'Crimson Text', serif;
 }
 
@@ -26,7 +30,7 @@ li {
   width: 540px;
   min-height: 400px;
   overflow: scroll;
-  background-color: rgb(206, 174, 163);
+  background-color: rgb(187, 184, 183);
 }
 
 .card-title {

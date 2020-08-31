@@ -1,7 +1,5 @@
-const Movement = require('../models/movement')
-const Wod = require('../models/wod')
 const User = require('../models/user')
-const user = require('../models/user')
+
 
 module.exports = {
     new: newGoal,
@@ -9,15 +7,19 @@ module.exports = {
 }
 
 function create(req, res) {
-    Goal.create(req.body) 
-    .then(goal => {
-        res.redirect('/goals', {
-            title: 'Profile', 
-            user: req.user,
-            goal
+    // if(req.body.complete === '') {
+        //     req.body.arrival = new Date(new Date().setMonth(new Date().getMonth() + 3))
+        req.user.goals.push(req.body)
+        console.log(req.body)
+        req.user.save().then(function(err, goal) {
+            res.render('goals/new', {
+                title: 'Goals', 
+                user: req.user,
+                goal
         })
     })
 }
+
 
 function newGoal(req,res) {
     res.render('goals/new', {

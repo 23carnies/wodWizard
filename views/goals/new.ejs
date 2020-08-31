@@ -1,10 +1,9 @@
 <%- include('../partials/header') %>
 
-<!-- Body Content Goals Tab -->
 <div class="card-body" >
-    <div class="tab-pane show fade" id="nav-goals" role="tabpanel" aria-labelledby="nav-goals-tab">
       <h5>Goals should be SMART: <span>S</span>pecific, <span>M</span>easurable, <span>A</span>chievable, <span>R</span>elevant, and <span>T</span>ime Bound</h5>
-      <form action="/users/profile" method="POST">
+      <form action="/goals/new" method="POST">
+
         <label>Goal:
           <input type="text" name="title" id="inputGoal" class="form-control">
         </label><br>
@@ -15,11 +14,12 @@
           <input type="date" name="goalDate" id="goalDate" class="form-control">
         </label><br>
         <label>Achieved?
-          <input type="checkbox" name="complete" id="completeGoal" class="form-control">
+          <input type="checkbox" name="complete" id="completeGoal" class="form-control" hidden>
         </label><br>
+        <input type="text" hidden name="user" value="<%= user.name %>">
+        <input type="text" hidden name="userPhoto" value="<%= user.avatar %>">
         <input type="submit" name="Submit" class="btn btn-dark">
       </form>
-    </div>
   </div>
 
   <%- include('../partials/footer') %>

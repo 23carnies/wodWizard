@@ -16,7 +16,7 @@ const userSchema = new Schema({
   googleId: String,
   bio: String,
   friends: [{ type: Schema.Types.ObjectId, ref: 'User'}],
-  goalSchema: [goalSchema]
+  goals: [goalSchema]
 }, {
   timestamps: true
 });

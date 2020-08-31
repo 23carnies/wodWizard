@@ -5,6 +5,8 @@ router.get('/', isLoggedIn, wodsCtrl.index)
 router.get('/new', isLoggedIn, wodsCtrl.new)
 router.post('/new', isLoggedIn, wodsCtrl.create)
 
+
+
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) return next();
     res.redirect("/auth/google");
