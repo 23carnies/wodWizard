@@ -7,17 +7,18 @@ module.exports = {
 }
 
 function create(req, res) {
-    // if(req.body.complete === '') {
-        //     req.body.arrival = new Date(new Date().setMonth(new Date().getMonth() + 3))
+    console.log(req.body)
+    if(req.body.complete === '') {
+        req.body.arrival = new Date(new Date().setMonth(new Date().getMonth() + 3))
         req.user.goals.push(req.body)
-        console.log(req.body)
         req.user.save().then(function(err, goal) {
             res.render('goals/new', {
                 title: 'Goals', 
                 user: req.user,
                 goal
+            })
         })
-    })
+    }
 }
 
 
