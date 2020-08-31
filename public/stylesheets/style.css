@@ -1,6 +1,6 @@
 body {
   text-align: center;
-  background-color: rgb(91, 94, 93);
+  background-color: rgb(189, 196, 194);
   background-image: url(/images/barbell.png);
   background-repeat: repeat-y;
   background-position: bottom;
@@ -45,4 +45,9 @@ tab-content {
 
 span {
   color: blue;
+}
+
+table {
+  margin: 0 auto;
+  max-width: 400px;
 }

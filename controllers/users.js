@@ -20,7 +20,8 @@ function showProfile(req, res) {
   User.findById(req.user._id).populate('friends').then((user) => {
     res.render('users/profile', {
       title: 'Profile',
-      user
+      user: req.user,
+      goals: req.body
     })
   })
 }

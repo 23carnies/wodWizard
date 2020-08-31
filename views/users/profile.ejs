@@ -6,10 +6,32 @@
     <div class="card-body">
       <div class="tab-pane show active fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-home-tab">
         <h4 class="card-title">Name: <%= user.name %></h4>
+        <img src="" alt="">
         <p class="card-text">Bio: <%= user.bio %></p>
         
     <!-- Put Goals Here -->
-    
+    <% if (user.goals.length) { %>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Content</th>
+            <th scope="col">Goal Due Date</th>
+            <th scope="col">Complete?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% user.goals.forEach((g) => { %>
+            <tr scope="row"></tr>
+            <td><%= g.title %></td>
+            <td><%= g.content %></td>
+            <td><%= g.goalDate %></td>
+            <td><%= g.complete %></td>
+          <% })  %> 
+        </tbody>
+      </table>
+    <% } %>  
+
      
         
       </div>

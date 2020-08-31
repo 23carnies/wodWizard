@@ -8,18 +8,16 @@ module.exports = {
 
 function create(req, res) {
     console.log(req.body)
-    if(req.body.complete === '') {
-        req.body.arrival = new Date(new Date().setMonth(new Date().getMonth() + 3))
         req.user.goals.push(req.body)
         req.user.save().then(function(err, goal) {
             res.render('goals/new', {
                 title: 'Goals', 
                 user: req.user,
-                goal
-            })
+                goals: req.body
         })
-    }
+    })
 }
+
 
 
 function newGoal(req,res) {
