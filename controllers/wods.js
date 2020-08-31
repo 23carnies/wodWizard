@@ -4,7 +4,7 @@ const Movement = require('../models/movement')
 
 
 module.exports = {
-    // index,
+    index,
     new: newWod,
     create,
     showRandom
@@ -51,12 +51,12 @@ function newWod(req, res) {
 }
 
 
-// function index(req, res) {
-//     Wod.find({})
-//     .then((wods) => {
-//         console.log(wods)
-//         res.render('wods/index', {title: 'WOD', 
-//             user: req.user,
-//             wods})
-//     })
-// }
+function index(req, res) {
+    Wod.find({})
+    .then((wods) => {
+        console.log(req.body)
+        res.render('wods/index', {title: 'WOD', 
+            user: req.user,
+            wods})
+    })
+}
