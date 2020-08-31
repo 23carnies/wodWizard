@@ -1,0 +1,23 @@
+<%- include('../partials/header') %>
+
+<h1>Welcome to wodWizard</h1>
+
+<h3>Today's wod is:</h3>
+
+<div id="showWod" class="card">
+    <div class="card-body">
+        <!-- show one wod -->
+        <p class="wod"><%= wod.title %></p>
+        <p class="wod"><%= wod.type %></p>
+        <p class="wod"><%= wod.style %></p>
+        <p class="wod"><%= wod.movements %></p>
+        <p class="wod"><%= wod.duration %></p>
+        <p class="wod"><%= wod.modifications %></p>
+        <!-- Need form to enter results -->
+        <!-- <button class="btn btn-dark" id="wod"><a href="/wods/show"></a>Get A Different Wod</a></button> -->
+    </div>
+</div>
+
+
+
+<%- include('../partials/footer') %>

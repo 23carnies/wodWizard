@@ -1,16 +1,22 @@
 <%- include('../partials/header') %> 
 
 
-<h1>Welcome to wodWizard, <br/></h1>
 
-<div id="showWod" class="card">
-    <div class="card-body">
-        <!-- show one wod -->
-        <button class="btn btn-dark" id="wod">Get A Wod</button>
-        <!-- Need form to enter results -->
-        <button class="btn btn-dark" id="wod">Get A Different Wod</button>
-    </div>
+<div>
+    <% wods.forEach((w) => { %>
+        <div>
+            <p class="wod"><%= w.title %></p>
+            <p class="wod"><%= w.type %></p>
+            <p class="wod"><%= w.style %></p>
+            <p class="wod"><%= w.movements %></p>
+            <p class="wod"><%= w.duration %></p>
+            <p class="wod"><%= w.modifications %></p>
+        </div>
+    <% }) %> 
 </div>
+
+
+
      
 
 <%- include('../partials/footer') %> 

@@ -2,15 +2,16 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema
 
 const wodSchema = new Schema ({
-    title: {type: String},
+    title: {type: String, required: true},
     date: {type: Date, default: Date.now},
     wodType: String,
     wodStyle: String,
-    movements: {type: String, required: true},
+    movements: String,
     duration: String,
     cratedBy: String,
     avatar: String,
-    modifications: String
+    modifications: String,
+    baseline: Boolean
 }, {
     timestamps: true
 })

@@ -5,7 +5,7 @@
 <h2>Create a Wod</h2>
     <form action="/wods/new" method="POST">
         <label>Title:
-            <input type="text" name="wodTitle" id="wodTitle" placeholder="Name your wod">
+            <input type="text" name="title" placeholder="Name your wod" class="form-control">
         </label><br>
         <input type="date" name="date" id="date" hidden>
         <input type="text" name="createdBy" id="createdBy" hidden>
@@ -32,14 +32,17 @@
         <label>Movements:
             <textarea name="movements" id="movements" cols="60" rows="5"></textarea>
         </label><br>
+        <label>Baseline
+            <input type="checkbox" name="complete" id="baseline" class="form-control">
+          </label><br>
         <label>Duration:
             <input type="text" name="duration" 
                 id="duration" class="form-control">
         </label>
         <input type="submit" value="Add Wod" class="btn btn-dark" id="addWod">
     </br>
-    <a href="#" class="btn btn-dark goBack">Go Back</a>
-    </form>
+</form>
+<a href="#" class="btn btn-dark goBack">Go Back</a>
 
 <%- include('../partials/footer.ejs') %> 
 

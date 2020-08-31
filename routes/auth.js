@@ -3,11 +3,12 @@ const passport = require('passport');
 
 
 // // The root route renders our only view
-// router.get('/', function(req, res) {
-//   res.redirect('/wods/show', {
-//     title: 'Today\'s Wod', 
-//     user: req.user})
-// });
+router.get('/', function(req, res, wods) {
+  res.redirect('/wods/show', {
+    title: 'Today\'s Wod', 
+    user: req.user,
+    wods})
+});
 
 router.get('/google', passport.authenticate(
   'google',
@@ -17,7 +18,7 @@ router.get('/google', passport.authenticate(
 router.get('/google/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect : '/wods',
+    successRedirect : '/wods/show',
     failureRedirect : '/'
   }
 ));

@@ -7,7 +7,7 @@ module.exports = {
 }
 
 function create(req, res) {
-    console.log(req.body)
+    // console.log(req.body)
         req.user.goals.push(req.body)
         req.user.save().then(function(err, goal) {
             res.render('goals/new', {
@@ -17,8 +17,6 @@ function create(req, res) {
         })
     })
 }
-
-
 
 function newGoal(req,res) {
     res.render('goals/new', {

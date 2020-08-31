@@ -1,12 +1,28 @@
 const User = require('../models/user')
 const Wod = require('../models/wod')
 const Movement = require('../models/movement')
-const wod = require('../models/wod')
+
 
 module.exports = {
-    index,
+    // index,
     new: newWod,
-    create
+    create,
+    showRandom
+    
+}
+
+function showRandom(req, res) {
+    Wod.estimatedDocumentCount().exec((err, count) => {
+        let random = Math.floor(Math.random() * count)
+        Wod.findOne().skip(random).exec((result) => {
+            console.log(result)
+            res.render('wods/show', {
+                title: 'Daily Wod', 
+                user: req.user,
+                wod: req.body
+            })
+        })
+    })
 }
 
 function create(req, res) {
@@ -14,9 +30,11 @@ function create(req, res) {
     req.body.avatar = req.user.avatar
     Wod.create(req.body) 
     .then(wod => {
+        console.log(wod)
         res.render('wods/new', {
             title: 'Add Wod',
-            user: req.user
+            user: req.user,
+            wods: req.body
         })
     })
 }
@@ -33,7 +51,12 @@ function newWod(req, res) {
 }
 
 
-function index(req, res) {
-    res.render('wods/index', {title: 'WOD', 
-        user: req.user})
-}
+// function index(req, res) {
+//     Wod.find({})
+//     .then((wods) => {
+//         console.log(wods)
+//         res.render('wods/index', {title: 'WOD', 
+//             user: req.user,
+//             wods})
+//     })
+// }

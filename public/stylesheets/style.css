@@ -1,9 +1,10 @@
 body {
   text-align: center;
   background-color: rgb(189, 196, 194);
-  background-image: url(/images/barbell.png);
+  /* background-image: url(/images/barbell.png);
+  background-size: 300px;
   background-repeat: repeat-y;
-  background-position: bottom;
+  background-position: bottom; */
   /* fix size in mobilebar */
   font: 14px 'Crimson Text', serif;
 }
