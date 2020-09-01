@@ -17,7 +17,8 @@
     </div>
     <div>
         <h3>Enter Results</h3>
-        <form action="">
+        <form action="" method="POST">
+            <input type="text" name="wod.title" hidden value="<%= randWod._id %>">
             <% if (randWod.wodStyle === 'FOR_TIME') { %>
             <label>
                 <input type="text" name="time" class="form-control" placeholder="mm:ss">
@@ -38,9 +39,10 @@
                 <input type="number" name="distance" class="form-control" placeholder="Total meters or miles">
             </label>
             <% } %>
+            <input type="submit" class="btn btn-dark">
         </form>
     </div>
-    <!-- Need form to enter results -->
+    
     <a href="/wods/show" class="btn btn-dark" id="wod">Get A Different Wod</a>
 </div>
 

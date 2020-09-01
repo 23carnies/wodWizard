@@ -29,6 +29,7 @@ const authRouter = require('./routes/auth');
 const goalsRouter = require('./routes/goals')
 const movementsRouter = require('./routes/movements')
 const wodsRouter = require('./routes/wods')
+const resultsRouter = require('./routes/results')
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -56,7 +57,7 @@ app.use('/wods', wodsRouter)
 app.use('/movements', movementsRouter)
 app.use('/users', usersRouter);
 app.use('/goals', goalsRouter)
-
+app.use('/', resultsRouter)
 
 
 // catch 404 and forward to error handler

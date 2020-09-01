@@ -1,6 +1,14 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema
 
+const resultSchema = new Schema ({
+  time: String,
+  reps: Number,
+  rounds: String,
+  distance: Number,
+  user: [{ type: Schema.Types.ObjectId, ref: 'User'}]
+})
+
 const goalSchema = new Schema ({
   title: String,
   content: String,
@@ -16,6 +24,7 @@ const userSchema = new Schema({
   googleId: String,
   bio: String,
   friends: [{ type: Schema.Types.ObjectId, ref: 'User'}],
+  result: [resultSchema],
   goals: [goalSchema]
 }, {
   timestamps: true

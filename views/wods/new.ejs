@@ -7,9 +7,9 @@
         <label>Title:
             <input type="text" name="title" placeholder="Name your wod" class="form-control">
         </label><br>
-        <input type="date" name="date" id="date" hidden>
-        <input type="text" name="createdBy" id="createdBy" hidden>
-        <input type="text" name="avatar" id="avatar" hidden>
+        <input type="date" name="date" value="<%= new Date() %>" hidden>
+        <input type="text" name="createdBy" value="<%= user.name %>" hidden>
+        <input type="text" name="avatar" value="<%= user.avatar %>" hidden>
         <label>Workout Type:
             <select name="wodType" class="form-control">
                 <option value="strength">Strength</option>

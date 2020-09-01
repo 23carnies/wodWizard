@@ -1,13 +1,7 @@
 const mongoose = require('mongoose'); 
 const Schema = mongoose.Schema
 
-const resultSchema = new Schema ({
-    time: String,
-    reps: Number,
-    rounds: String,
-    distance: Number,
-    user: [{ type: Schema.Types.ObjectId, ref: 'User'}]
-})
+
 
 const wodSchema = new Schema ({
     title: {type: String, required: true},
@@ -21,8 +15,7 @@ const wodSchema = new Schema ({
     cratedBy: String,
     avatar: String,
     modifications: String,
-    baseline: Boolean,
-    result: [resultSchema]
+    baseline: Boolean
 }, {
     timestamps: true
 })
