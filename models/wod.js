@@ -1,10 +1,15 @@
 const mongoose = require('mongoose'); 
 const Schema = mongoose.Schema
 
+const resultSchema = new Schema ({
+    time: String,
+    maxReps: Number,
+    user: [{ type: Schema.Types.ObjectId, ref: 'User'}]
+})
 
 const wodSchema = new Schema ({
     title: {type: String, required: true},
-    date: {type: Date, default: Date.now},
+    date: {type: Date, default: new Date()},
     wodType: String,
     wodStyle: String,
     movements: String,
@@ -12,7 +17,8 @@ const wodSchema = new Schema ({
     cratedBy: String,
     avatar: String,
     modifications: String,
-    baseline: Boolean
+    baseline: Boolean,
+    result: [resultSchema]
 }, {
     timestamps: true
 })
