@@ -1,15 +1,22 @@
 const Wod = require('../models/wod')
+const User = require('../models/user')
+
 
 module.exports = {
     create
 }
 
 function create(req, res) {
-    randWod._id = req.body._id
-    Wod.findById(req.params.id, function(err, wod) {
-        wod.results.push(req.body) 
-        wod.save((err) => {
-            res.redirect(`/users/${}`)
+    User.findById(req.user._id)
+        .then((user) => {
+            user.results.push(req.body)
+            user.save().then(() => {
+            res.render(`users/profile`,
+            {title: 'Profile',
+            user            })
         })
     })
 }
+
+
+              

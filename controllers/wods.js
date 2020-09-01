@@ -50,6 +50,7 @@ function showRandom(req, res) {
     Wod.find({})
     .then((wods) => {
         let randWod = wods[Math.floor(Math.random() * wods.length)]
+       
         res.render('wods/show', {
             title: 'WOD',
             user: req.user,

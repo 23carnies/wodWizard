@@ -6,7 +6,9 @@ const resultSchema = new Schema ({
   reps: Number,
   rounds: String,
   distance: Number,
-  user: [{ type: Schema.Types.ObjectId, ref: 'User'}]
+  wodId: String
+}, {
+  timestamps: true
 })
 
 const goalSchema = new Schema ({
@@ -14,6 +16,8 @@ const goalSchema = new Schema ({
   content: String,
   goalDate: Date,
   complete: Boolean
+}, {
+  timestamps: true
 })
 
 const userSchema = new Schema({
@@ -24,7 +28,7 @@ const userSchema = new Schema({
   googleId: String,
   bio: String,
   friends: [{ type: Schema.Types.ObjectId, ref: 'User'}],
-  result: [resultSchema],
+  results: [resultSchema],
   goals: [goalSchema]
 }, {
   timestamps: true

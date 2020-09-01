@@ -2,7 +2,7 @@ const router = require('express').Router()
 const resultsCtrl = require('../controllers/results')
 
 
-router.post('/wod/:id', isLoggedIn, resultsCtrl.create)
+router.post('/users/:id', isLoggedIn, resultsCtrl.create)
 
 
 function isLoggedIn(req, res, next) {

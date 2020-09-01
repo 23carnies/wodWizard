@@ -17,26 +17,27 @@
     </div>
     <div>
         <h3>Enter Results</h3>
-        <form action="" method="POST">
-            <input type="text" name="wod.title" hidden value="<%= randWod._id %>">
+        <form action="/users/profile" method="POST">
+            <input type="text" name="wodId" hidden value="<%= randWod._id %>">
             <% if (randWod.wodStyle === 'FOR_TIME') { %>
             <label>
                 <input type="text" name="time" class="form-control" placeholder="mm:ss">
             </label>
-            <% } %>
-            <% if (randWod.wodStyle === 'MAX_REPS') { %>
+            <% } else if (randWod.wodStyle === 'MAX_REPS') { %>
             <label>
                 <input type="number" name="reps" class="form-control" placeholder="Total Reps">
             </label>
-            <% } %>
-            <% if (randWod.wodStyle === 'AMRAP') { %>
+            <% } else if (randWod.wodStyle === 'AMRAP') { %>
             <label>
                 <input type="string" name="rounds" class="form-control" placeholder="Total Rounds + Reps">
             </label>
-            <% } %>
-            <% if (randWod.wodStyle === 'FOR_DISTANCE') { %>
+            <% } else if (randWod.wodStyle === 'FOR_DISTANCE') { %>
             <label>
                 <input type="number" name="distance" class="form-control" placeholder="Total meters or miles">
+            </label>
+            <% } else { %>
+            <label>
+                <input type="string" name="otherResult" class="form-control" placeholder="Result">
             </label>
             <% } %>
             <input type="submit" class="btn btn-dark">
