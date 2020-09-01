@@ -12,7 +12,7 @@ module.exports = {
 
 function show(req, res) {
   User.findById(req.params.id).then((userInfo) => {
-    res.render('users/show', {
+    res.render(`users/${req.params.id}`, {
       title: 'Find Friends', 
       userInfo,
       user: req.user
