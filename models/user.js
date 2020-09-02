@@ -24,7 +24,7 @@ const userSchema = new Schema({
   name: String,
   email: String,
   avatar: String,
-  alias: String,
+  moniker: String,
   googleId: String,
   bio: String,
   friends: [{ type: Schema.Types.ObjectId, ref: 'User'}],

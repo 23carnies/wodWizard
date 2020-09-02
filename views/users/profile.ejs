@@ -4,9 +4,15 @@
     
     <!-- Body Content User Info -->
     <div class="">
+      <% if (!user.moniker) { %>
         <h4 class="">Name: <%= user.name %></h4>
+    <% } else { %> 
+        <h4 class="">Moniker: <%= user.moniker %></h4>
+    <% } %>
         <img src="<%= user.avatar %> " alt="User Photo from Google" class="userPhoto">
         <p class="card-text">Bio: <%= user.bio %></p>
+
+        <br><br>
         
     <!-- Put Goals Here -->
     <% if (user.goals.length) { %>
@@ -25,17 +31,25 @@
               <td><%= g.title %></td>
               <td><%= g.content %></td>
               <td><%= g.goalDate.toLocaleString().split(',')[0] %></td>
-              <td><%= g.complete %></td>
+              <td><input type="checkbox"><%= g.complete ? 'checked' : '' %></td>
+              <td><button action="/users/profile?_method=DELETE" method="POST" class="btn btn-dark">Delete</button></td>
           <% })  %> 
             </tr>
         </tbody>
       </table>
     <% } %>  
-
-     
-        
       </div>
     </div>
+
+     <!-- Link to wod results here --> 
+     <button class="btn btn-dark" action="wods/"></button>
+
+    <!-- need to update goals -->
+    <!-- Need to delete goals -->
+    <!-- instead of delte goals, just hide the checked boxes. later put a page of all goals and color ones that are complete -->
+    <!-- need to see wod results -->
+
+
 
     <!-- Body Content Update User -->
     <div class="">
@@ -44,12 +58,12 @@
             <input type="text" name="moniker" id="userMoniker" class="form-control" value="<%= user.alias %>">
           </label><br>
           <label>Photo: 
-            <input type="text" name="photo" id="userPhoto" class="form-control" placeholder="Add photo URL here" value=<%= user.avatar %>>
+            <input type="text" name="avatar" id="userPhoto" class="form-control" placeholder="Add photo URL here" value=<%= user.avatar %>>
           </label><br>
           <label>Bio: 
             <textarea name="bio" id="userBio" cols="20" rows="3" class="form-control"><%= user.bio %></textarea>
           </label><br>
-          <input type="submit" name="submitBtn" class="btn btn-dark">
+          <button type="submit" name="submitBtn" class="btn btn-dark">Submit</button>
         </form>
       </div>
     </div>

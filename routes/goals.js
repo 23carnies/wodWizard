@@ -4,6 +4,7 @@ const goalsCtrl = require('../controllers/goals')
 
 router.get('/new', isLoggedIn, goalsCtrl.new)
 router.post('/:id', isLoggedIn, goalsCtrl.create)
+router.delete('/:id', isLoggedIn, goalsCtrl.delete)
 
 
 function isLoggedIn(req, res, next) {

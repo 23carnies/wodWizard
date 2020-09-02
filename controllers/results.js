@@ -13,7 +13,7 @@ function create(req, res) {
             user.save().then(() => {
             res.render(`users/profile`,
             {title: 'Profile',
-            user            })
+            user})
         })
     })
 }
