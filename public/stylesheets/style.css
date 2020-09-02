@@ -57,3 +57,50 @@ table {
   border-radius: 25%;
   width: 100px;
 }
+
+
+.tabs {
+  margin: 0 auto;
+  width: 90%;
+  height: 500px;
+
+}
+
+.tabs__btnCtn {
+  height: 15%;
+}
+
+.tabs__btn {
+  width: 20%;
+  height: 100%;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 15px;
+  background-color: lightblue;
+}
+
+.tabs__btn:active{
+  background-color: aqua;
+}
+
+.tabs__btn--active{
+  font-weight: bold;
+  border-bottom: 2px solid blue;
+  background-color: slateblue;
+}
+
+.tabs__content {
+  height: 85%;
+  background-color: rgb(136, 136, 163);
+  color: white;
+  text-align: center;
+  padding-top: 105%;
+  box-sizing: border-box;
+  display: none;
+}
+
+.tabs__content--active {
+  display: block;
+}
