@@ -64,7 +64,7 @@
                             <td><form action="/goals/<%= g._id %>?_method=PUT" method="POST">
                               <input type="checkbox" name="complete" id="complete" class="form-control"><%= g.complete ? 'checked' : '' %>
                             </form></td>
-                            <td><form action="/goals/<%= g._id %>?_method=DELETE" method="POST" type="submit"><button class="btn btn-dark">DELETE</button></td>
+                            <td><form action="/goals/<%= g._id %>?_method=DELETE" method="POST" type="submit"><button class="btn btn-dark">DELETE</button></form></td>
                         <% })  %> 
                           </tr>
                       </tbody>
@@ -77,27 +77,18 @@
         <div role="tabpanel" class="tab-pane" id="resultsInfo" aria-labelledby="resultsInfo-tab">
           <div class="card-body">
               <!-- Actual Content Here -->  
-            <% if (user.results) { %>   
-              <% user.results.forEach((r) => { %>
+            <% if (wod) {%> 
               <div class="box" style="width: 18rem;">
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Wod: <%= r.wodTitle %></li>
-                  <% if (r.time) { %>
-                  <li class="list-group-item">Time: <%= r.time %></li>
-                  <%} else if (r.reps) {%>
-                  <li class="list-group-item">Reps: <%= r.reps %></li>
-                  <%} else if (r.rounds) {%>
-                  <li class="list-group-item">Rounds: <%= r.rounds %></li>
-                  <%} else if (r.distance) {%>
-                  <li class="list-group-item">Distance: <%= r.distance %></li>
-                  <%} else { %>
-                  <li class="list-group-item">Result: <%= r.otherResult %></li>
-                  <% } %> 
-                </ul>
-              </div>
-              <% })} else { %>
-                <h3>You have not posted any results yet</h3>
-              <% } %>   
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Wod: <%= wod.wodTitle %></li>
+                <li class="list-group-item">Result: <%= wod.results %></li>
+              </ul>
+            </div>
+          <% } else { %>
+            <h3>You have not posted any results yet</h3>
+          <% } %> 
+
+           
                         
             </div>
       </div>
@@ -107,33 +98,36 @@
         <div role="tabpanel" class="tab-pane" id="friendsInfo" aria-labelledby="friendsInfo-tab">
             <div class="card-body">
                 <!-- Actual Content Here -->   
-                <!-- <% if (!user.friends) { %>    -->
+                <% if (user.friends) { %>   
               <ul>
                 <% user.friends.forEach(f => { %>
-                  <li><img width="30" class="friendPhoto" name="avatar" id="avatarPic" src="<%= f.avatar %>" alt="User Photo"><%= f.name %></li>
+                  <li><img width="30" class="friendPhoto" id="avatarPic" src="<%= f.avatar %>" alt="User Photo"><%= f.name %></li>
                   <li> </li>
                   <li>Bio: <%= f.bio %></li><br><br>
                     <% }) %>  
               </ul>     
-              <!-- <% } else { %>
+              <% } else { %>
                 <h3>You can find your friends <a href="/users">here</a>.</h3>
-              <% } %>          -->
+              <% } %>         
             </div>
         </div>
              
+
+
+
         <!-- Content for Update Profile -->
         <div role="tabpanel" class="tab-pane" id="updateInfo" aria-labelledby="updateInfo-tab">
             <div class="card-body">
                  <!-- Actual Content Here -->    
-                 <form action="/users/profile?_method=PUT" method="POST">
+                 <form action="/users/profile/?_method=PUT" method="POST">
                     <label>Moniker: 
-                      <input type="text" name="moniker" id="userMoniker" class="form-control">
+                      <input type="text" name="moniker" id="userMoniker" class="form-control" value="<%= user.moniker %>">
                     </label><br>
                     <label>Photo: 
-                      <input type="text" name="avatar" id="userPhoto" class="form-control" placeholder="Add photo URL here" >
+                      <input type="text" name="avatar" id="userPhoto" class="form-control"  value="<%= user.avatar %>">
                     </label><br>
                     <label>Bio: 
-                      <textarea name="bio" id="userBio" cols="20" rows="3" class="form-control"></textarea>
+                      <textarea name="bio" id="userBio" cols="20" rows="3" class="form-control" value="<%= user.bio %>"></textarea>
                     </label><br>
                     <button type="submit" name="submitBtn" class="btn btn-dark">Submit</button>
                   </form>           

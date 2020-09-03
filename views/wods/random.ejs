@@ -17,7 +17,7 @@
     </div>
     <div>
         <h3>Enter Results</h3>
-        <form action="/users/profile" method="POST">
+        <form action="/wods/<%= randWod._id %>/results?_method=PUT" method="POST">
             <input type="text" name="wodId" hidden value="<%= randWod._id %>">
             <input type="text" name="wodTitle" hidden value="<%= randWod.title %>">
             <input type="text" name="results" >

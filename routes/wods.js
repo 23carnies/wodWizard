@@ -6,7 +6,7 @@ router.get('/', isLoggedIn, wodsCtrl.index)
 router.get('/new', isLoggedIn, wodsCtrl.new)
 router.post('/new', isLoggedIn, wodsCtrl.create)
 router.get('/:id', isLoggedIn, wodsCtrl.showRandom)
-router.post('/:id/results', isLoggedIn, wodsCtrl.results)
+router.put('/:id/results', isLoggedIn, wodsCtrl.results)
 
 
 

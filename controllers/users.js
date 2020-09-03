@@ -39,18 +39,27 @@ function show(req, res) {
 }
 
 function update(req, res) {
-  console.log(req.user._id)
-  User.findByIdAndUpdate(req.user._id, req.body, { new: true }).then(() => {
+  req.user.moniker = req.body.moniker
+  req.user.bio = req.body.bio
+  req.user.avatar = req.body.avatar
+  req.user.save().then(() => {
     res.redirect('/users/profile')
   })
 }
+
+// function update(req, res) {
+//   User.findByIdAndUpdate(req.user._id, req.body, { new: true }).then(() => {
+//     res.redirect('/users/profile')
+//   })
+// }
 
 function showProfile(req, res) {
   User.findById(req.user._id).populate('friends').then((user) => {
     res.render('users/profile', {
       title: 'Profile',
-      user: req.user,
-      goals: req.body
+      user,
+      goals: req.body,
+      wod: null
     })
   })
 }

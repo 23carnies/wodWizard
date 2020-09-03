@@ -1,5 +1,5 @@
 const User = require('../models/user')
-const user = require('../models/user')
+
 
 
 module.exports = {
@@ -19,24 +19,15 @@ function deleteGoal(req, res) {
         })
 }
 
-// function update(req, res) {
-//     req.body.complete = req.body.complete === 'on'
-//     User.goals.findByIdAndUpdate(req.user._id, req.body, {new: true}) 
-//     .then(() => {
-//         res.redirect('/users/profile')
-//     })
-// }
 function update(req,res) {
     req.body.complete = req.body.complete === 'on'
-    Goal.findByIdAndUpdate(req.params.id, req.body, {new: true})
+    User.goals.findByIdAndUpdate(req.params.id, req.body, {new: true})
     .then(() => {
         res.redirect('/users/profile', {
             title: 'Profile'
         })
     })
 }
-
-
 
 function index(req, res) {
     Goal.find({}, (err, goals) => {
@@ -50,7 +41,6 @@ function index(req, res) {
 
 function create(req, res) {
     req.body.complete = !!req.body.complete
-  
         req.user.goals.push(req.body)
         req.user.save().then(function(err, goal) {
             res.render('goals/new', {

@@ -13,17 +13,31 @@ module.exports = {
 }
 
 function results(req, res) {
-    User.findById(req.user._id)
-        Wod.findById(req.params.id, (err, wod) => {
-            wod.results.push(req.body)
-            wod.save().then(() => {
-                res.render('users/profile', {
-                    title: 'Profile'
-                })
-            })
+    Wod.findByIdAndUpdate(req.params.id, req.body, {new: true})
+    .then((wod) => {
+        res.render('users/profile', {
+            title: 'REsults',
+            user: req.user,
+            wod
+        })
     })
-    
 }
+
+
+
+// function results(req, res) {
+//     User.findById(req.user._id)
+//         Wod.results.findByIdAndUpdate(req.params.id, req.body, {new: true} => {
+//             console.log(req.body)
+//             wod.push(req.body)
+//             wod.save().then(() => {
+//                 res.render('users/profile/#results', {
+//                     title: 'Profile'
+//                 })
+//             })
+//     })
+    
+// }
 
 function create(req, res) {
     req.body.createdBy = req.user.name
