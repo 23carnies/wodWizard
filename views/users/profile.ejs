@@ -73,11 +73,36 @@
         <!-- Content for Results -->
         <div role="tabpanel" class="tab-pane" id="resultsInfo" aria-labelledby="resultsInfo-tab">
           <div class="card-body">
-              <!-- Actual Content Here -->     
+              <!-- Actual Content Here -->  
+            <% if (user.results) { %>   
               <% user.results.forEach((r) => { %>
-                  <a href="#"></a>
-                <% }) %>           
-          </div>
+              <div class="box" style="width: 18rem;">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item"><%= r.wodTitle %></li>
+                  <li class="list-group-item"><%= r.time %></li>
+                  <li class="list-group-item"><%= r.reps %></li>
+                  <li class="list-group-item"><%= r.rounds %></li>
+                  <li class="list-group-item"><%= r.distance %></li>
+                  <li class="list-group-item"><%= r.otherResult %></li>
+                </ul>
+              </div>
+              <% })} else { %>
+                <h3>You have not posted any results yet</h3>
+              <% } %>   
+                        
+              <!-- <canvas id="myChart" width="300" height="300"></canvas>
+              <canvas id="myChart" width="300" height="300"></canvas>
+        <script>
+          const ctx = document.getElementById('myChart')
+          const myLineChart = new Chart(ctx, {
+            type: 'line', 
+            data: [wodResults],
+            backgroundColor: [
+              'rgba(255'
+            ]
+          }) -->
+
+                    </div>
       </div>
 
 
@@ -97,13 +122,13 @@
                  <!-- Actual Content Here -->    
                  <form action="/users/profile?_method=PUT" method="POST">
                     <label>Moniker: 
-                      <input type="text" name="moniker" id="userMoniker" class="form-control" value="<%= user.alias %>">
+                      <input type="text" name="moniker" id="userMoniker" class="form-control">
                     </label><br>
                     <label>Photo: 
-                      <input type="text" name="avatar" id="userPhoto" class="form-control" placeholder="Add photo URL here" value=<%= user.avatar %>>
+                      <input type="text" name="avatar" id="userPhoto" class="form-control" placeholder="Add photo URL here" >
                     </label><br>
                     <label>Bio: 
-                      <textarea name="bio" id="userBio" cols="20" rows="3" class="form-control"><%= user.bio %></textarea>
+                      <textarea name="bio" id="userBio" cols="20" rows="3" class="form-control"></textarea>
                     </label><br>
                     <button type="submit" name="submitBtn" class="btn btn-dark">Submit</button>
                   </form>           

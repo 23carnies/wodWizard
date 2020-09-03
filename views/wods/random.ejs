@@ -19,6 +19,7 @@
         <h3>Enter Results</h3>
         <form action="/users/profile" method="POST">
             <input type="text" name="wodId" hidden value="<%= randWod._id %>">
+            <input type="text" name="wodTitle" hidden value="<%= randWod.title %>">
             <% if (randWod.wodStyle === 'FOR_TIME') { %>
             <label>
                 <input type="text" name="time" class="form-control" placeholder="mm:ss">
@@ -44,7 +45,7 @@
         </form>
     </div>
     
-    <a href="/wods/show" class="btn btn-dark" id="wod">Get A Different Wod</a>
+    <a href="/wods/random" class="btn btn-dark" id="wod">Get A Different Wod</a>
 </div>
 
 

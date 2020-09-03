@@ -1,15 +1,17 @@
 
 const Wod = require('../models/wod')
 const Movement = require('../models/movement')
+const User = require('../models/user')
 
 
 module.exports = {
     index,
     new: newWod,
     create,
-    showRandom
+    showRandom,
     
 }
+
 
 
 function create(req, res) {
@@ -50,7 +52,7 @@ function showRandom(req, res) {
     Wod.find({})
     .then((wods) => {
         let randWod = wods[Math.floor(Math.random() * wods.length)]
-        res.render('wods/show', {
+        res.render('wods/random', {
             title: 'WOD',
             user: req.user,
             randWod
