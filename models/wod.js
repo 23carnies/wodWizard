@@ -15,7 +15,9 @@ const wodSchema = new Schema ({
     cratedBy: String,
     avatar: String,
     modifications: String,
-    baseline: Boolean
+    baseline: Boolean,
+    user: {type: Schema.Types.ObjectId, ref: 'User'},
+    results: String
 }, {
     timestamps: true
 })

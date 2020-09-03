@@ -39,8 +39,8 @@ function show(req, res) {
 }
 
 function update(req, res) {
+  console.log(req.user._id)
   User.findByIdAndUpdate(req.user._id, req.body, { new: true }).then(() => {
-    console.log(req.body)
     res.redirect('/users/profile')
   })
 }

@@ -1,7 +1,7 @@
 <%- include('../partials/header') %> 
 
 <!-- This is the card itself -->
-<div class="card" style="width: 90%">
+<div class="card container-fluid" >
 
     <!-- Nav for the card -->
     <ul class="nav nav-tabs" role="tablist">
@@ -40,6 +40,7 @@
             </div>
         </div>
 
+
         <!-- Content for Goals -->
         <div role="tabpanel" class="tab-pane" id="goalsInfo" aria-labelledby="goalsInfo-tab">
             <div class="card-body">
@@ -60,8 +61,10 @@
                             <td><%= g.title %></td>
                             <td><%= g.content %></td>
                             <td><%= g.goalDate.toLocaleString().split(',')[0] %></td>
-                            <td><input type="checkbox"><%= g.complete ? 'checked' : '' %></td>
-                            <td><button action="/users/profile?_method=DELETE" method="POST" class="btn btn-dark">Delete</button></td>
+                            <td><form action="/goals/<%= g._id %>?_method=PUT" method="POST">
+                              <input type="checkbox" name="complete" id="complete" class="form-control"><%= g.complete ? 'checked' : '' %>
+                            </form></td>
+                            <td><form action="/goals/<%= g._id %>?_method=DELETE" method="POST" type="submit"><button class="btn btn-dark">DELETE</button></td>
                         <% })  %> 
                           </tr>
                       </tbody>
@@ -78,31 +81,25 @@
               <% user.results.forEach((r) => { %>
               <div class="box" style="width: 18rem;">
                 <ul class="list-group list-group-flush">
-                  <li class="list-group-item"><%= r.wodTitle %></li>
-                  <li class="list-group-item"><%= r.time %></li>
-                  <li class="list-group-item"><%= r.reps %></li>
-                  <li class="list-group-item"><%= r.rounds %></li>
-                  <li class="list-group-item"><%= r.distance %></li>
-                  <li class="list-group-item"><%= r.otherResult %></li>
+                  <li class="list-group-item">Wod: <%= r.wodTitle %></li>
+                  <% if (r.time) { %>
+                  <li class="list-group-item">Time: <%= r.time %></li>
+                  <%} else if (r.reps) {%>
+                  <li class="list-group-item">Reps: <%= r.reps %></li>
+                  <%} else if (r.rounds) {%>
+                  <li class="list-group-item">Rounds: <%= r.rounds %></li>
+                  <%} else if (r.distance) {%>
+                  <li class="list-group-item">Distance: <%= r.distance %></li>
+                  <%} else { %>
+                  <li class="list-group-item">Result: <%= r.otherResult %></li>
+                  <% } %> 
                 </ul>
               </div>
               <% })} else { %>
                 <h3>You have not posted any results yet</h3>
               <% } %>   
                         
-              <!-- <canvas id="myChart" width="300" height="300"></canvas>
-              <canvas id="myChart" width="300" height="300"></canvas>
-        <script>
-          const ctx = document.getElementById('myChart')
-          const myLineChart = new Chart(ctx, {
-            type: 'line', 
-            data: [wodResults],
-            backgroundColor: [
-              'rgba(255'
-            ]
-          }) -->
-
-                    </div>
+            </div>
       </div>
 
 
@@ -110,12 +107,20 @@
         <div role="tabpanel" class="tab-pane" id="friendsInfo" aria-labelledby="friendsInfo-tab">
             <div class="card-body">
                 <!-- Actual Content Here -->   
-                <% user.friends.forEach((f) => { %>
-                    <a href="/users/<%= f._id %>"><img width="50" id="avatarPic" src="<%= f.avatar %>" alt="User Photo"><%= f.name %></a>
-                  <% }) %>              
+                <!-- <% if (!user.friends) { %>    -->
+              <ul>
+                <% user.friends.forEach(f => { %>
+                  <li><img width="30" class="friendPhoto" name="avatar" id="avatarPic" src="<%= f.avatar %>" alt="User Photo"><%= f.name %></li>
+                  <li> </li>
+                  <li>Bio: <%= f.bio %></li><br><br>
+                    <% }) %>  
+              </ul>     
+              <!-- <% } else { %>
+                <h3>You can find your friends <a href="/users">here</a>.</h3>
+              <% } %>          -->
             </div>
         </div>
-        
+             
         <!-- Content for Update Profile -->
         <div role="tabpanel" class="tab-pane" id="updateInfo" aria-labelledby="updateInfo-tab">
             <div class="card-body">

@@ -4,10 +4,10 @@
 
 <h3>Today's wod is:</h3>
 
-<div id="showWod" class="card">
+<div id="showWod" class="card container-fluid">
     <div class="card-body">
         <!-- show one wod -->
-        <p class="wod"><%= randWod.title %></p>
+        <p class="wod"><%= randWod.title %></p> 
         <p class="wod"><%= randWod.wodType %></p>
         <p class="wod"><%= randWod.wodStyle %></p>
         <p class="wod"><%= randWod.movements %></p>
@@ -20,27 +20,7 @@
         <form action="/users/profile" method="POST">
             <input type="text" name="wodId" hidden value="<%= randWod._id %>">
             <input type="text" name="wodTitle" hidden value="<%= randWod.title %>">
-            <% if (randWod.wodStyle === 'FOR_TIME') { %>
-            <label>
-                <input type="text" name="time" class="form-control" placeholder="mm:ss">
-            </label>
-            <% } else if (randWod.wodStyle === 'MAX_REPS') { %>
-            <label>
-                <input type="number" name="reps" class="form-control" placeholder="Total Reps">
-            </label>
-            <% } else if (randWod.wodStyle === 'AMRAP') { %>
-            <label>
-                <input type="string" name="rounds" class="form-control" placeholder="Total Rounds + Reps">
-            </label>
-            <% } else if (randWod.wodStyle === 'FOR_DISTANCE') { %>
-            <label>
-                <input type="number" name="distance" class="form-control" placeholder="Total meters or miles">
-            </label>
-            <% } else { %>
-            <label>
-                <input type="string" name="otherResult" class="form-control" placeholder="Result">
-            </label>
-            <% } %>
+            <input type="text" name="results" >
             <input type="submit" class="btn btn-dark">
         </form>
     </div>

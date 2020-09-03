@@ -9,10 +9,21 @@ module.exports = {
     new: newWod,
     create,
     showRandom,
-    
+    results
 }
 
-
+function results(req, res) {
+    User.findById(req.user._id)
+        Wod.findById(req.params.id, (err, wod) => {
+            wod.results.push(req.body)
+            wod.save().then(() => {
+                res.render('users/profile', {
+                    title: 'Profile'
+                })
+            })
+    })
+    
+}
 
 function create(req, res) {
     req.body.createdBy = req.user.name
@@ -37,7 +48,6 @@ function newWod(req, res) {
         })
     })
 }
-
 
 function index(req, res) {
     Wod.find({})

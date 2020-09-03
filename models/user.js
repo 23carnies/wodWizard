@@ -1,12 +1,37 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema
 
-const resultSchema = new Schema ({
-  result: String,
-  wodId: {type: Schema.Types.ObjectId, ref: 'Wod'}
-}, {
-  timestamps: true
-})
+// const resultSchema = new Schema ({
+//   time: {type: String},
+//   reps: {type: Number},
+//   rounds: {type: String},
+//   distance: {type: Number},
+//   user: [{ type: Schema.Types.ObjectId, ref: 'User'}],
+//   wodId: {type: String},
+//   wodTitle: {type: String}
+// }, {
+//   timestamps: true
+// })
+
+
+
+
+// const resultSchema = new Schema ({
+//   result: String,
+//   wodId: {type: Schema.Types.ObjectId, ref: 'Wod'}
+// }, {
+//   timestamps: true
+// })
+// const resultSchema = new Schema ({
+//   time: String,
+//   reps: Number,
+//   rounds: String,
+//   Distance: Number,
+//   otherResult: String,
+//   wodId: {type: Schema.Types.ObjectId, ref: 'Wod'}
+// }, {
+//   timestamps: true
+// })
 
 const goalSchema = new Schema ({
   title: String,
@@ -25,7 +50,7 @@ const userSchema = new Schema({
   googleId: String,
   bio: String,
   friends: [{ type: Schema.Types.ObjectId, ref: 'User'}],
-  results: [resultSchema],
+  // results: [resultSchema],
   goals: [goalSchema]
 }, {
   timestamps: true

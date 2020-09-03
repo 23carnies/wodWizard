@@ -1,14 +1,7 @@
-// const resultsEl = document.getElementById('results')
+const fanfare = new Audio('./audio/winSquare.wav')
+document.getElementById('complete').addEventListener('click', completeGoal)
 
-
-// resultsEl.addEventListener('click', () => {
-    //     fetch('')
-    // })
-    
-// const QuickChart = require("quickchart-js");
-
-// const myChart = new QuickChart()
-// myChart.setConfig({
-//     type: 'line', 
-//     data: {labels: }
-// })
+function completeGoal() {
+    confetti.start(4000)
+    fanfare.play()
+}

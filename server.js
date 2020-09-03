@@ -19,9 +19,6 @@ const app = express();
 require('./config/database');
 require('./config/passport');
 
-// moment.js
-const moment = require('moment')
-
 
 // require our routes
 const indexRouter = require('./routes/index')

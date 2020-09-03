@@ -2,10 +2,10 @@
 
 
 <div id="showWod"></div>
-<div id="regUsers">
+<div id="regUsers" class="container-fluid">
     <ul>Registered Users:
         <% users.forEach(u => { %>
-          <li><a href="/users/<%= u._id %>"><%= u.name %></a></li>
+          <li><img width="30" class="friendPhoto" id="avatarPic" src="<%= u.avatar %>" alt="User Photo"><a class="friends" href="/users/<%= u._id %>"><%= u.name %></a></li>
         <% }) %>
       </ul> 
 </div>
