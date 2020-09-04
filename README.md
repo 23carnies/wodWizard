@@ -37,6 +37,8 @@ Due to Covid19, my very active 70+ father is no longer going to the gym. He lame
 
 ![Screenshot of Goals page](./public/images/goals.png)
 
+![Screenshot of daily Wod](./public/images/dailyWod.png)
+
 
 ### Wireframes/ERD:
 ![ERD](./public/resources/ERD-2.png)

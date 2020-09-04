@@ -61,9 +61,12 @@
                             <td><%= g.title %></td>
                             <td><%= g.content %></td>
                             <td><%= g.goalDate.toLocaleString().split(',')[0] %></td>
-                            <td><form action="/goals/<%= g._id %>?_method=PUT" method="POST"><input type="checkbox" class="form-control">
-                              <button>Done</button>
+                            <td><form action="/goals/<%= g._id %>?_method=PUT" method="POST">
+                              <input type="checkbox" name="complete" id="complete" class="form-control"><%= g.complete ? 'checked' : '' %>
                             </form></td>
+                            <!-- <td><form action="/goals/<%= g._id %>?_method=PUT" method="POST"><input type="checkbox" id="checkBtn" class="form-control">
+                              <button class="btn btn-dark">Done</button>
+                            </form></td> -->
                             <td><form action="/goals/<%= g._id %>?_method=DELETE" method="POST" type="submit"><button class="btn btn-dark">DELETE</button></form></td>
                         <% })  %> 
                           </tr>
