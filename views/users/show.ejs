@@ -3,18 +3,20 @@
 <h1>find friends</h1>
 
 <div class="">
-  <img id="avatarPhoto" style="height: 18rem;" class="" src="<%= userInfo.avatar ? userInfo.avatar : 'https://robohash.org/?set=set4?size=300x300.png'  %>" alt=" image cap">
+  <img id="avatarPhoto" style="height: 18rem;" class="" src="<%= userInfo.avatar %>">
   <div class="">
   </div>
   <div class="">
     <h5 class=""><%= userInfo.name %></h5>
     <p class="">Joined: <%= userInfo.createdAt.toLocaleString().split(',')[0] %></p> 
     <% if (!userInfo._id.equals(user._id) && !user.friends.includes(userInfo._id)) { %>
-      <a href="/users/<%= userInfo._id %>/friend" class="btn btn-primary">Add Friend</a>
+      <a href="/users/<%= userInfo._id %>/friend" class="btn btn-dark">Add Friend</a>
     <% } %>
     <% if (!userInfo._id.equals(user._id) && user.friends.includes(userInfo._id)) { %>
-      <a href="/users/<%= userInfo._id %>/unfriend" class="btn btn-primary">Remove Friend</a>
+      <a href="/users/<%= userInfo._id %>/unfriend" class="btn btn-danger">Remove Friend</a>
     <% } %>
+    <br><br>
+    <a href="/users"><button type="submit" class="btn btn-dark">More Friends</button></a>
   </div>
 </div>
 

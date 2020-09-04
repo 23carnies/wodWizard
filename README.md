@@ -55,6 +55,8 @@ Wireframe of entry and add workout pages
 ![WireFrame](./public/resources/Wireframe2-Todays-Workout-Stats.png)
 Wireframe of goals and stats pages
 
+### Trello Board
+[Link here](https://trello.com/b/bADj8Iy1/wodwizard)
 
 ### Stretch Goals:
 * AAU I should be able to see charts of progress over time of a workout/movement.

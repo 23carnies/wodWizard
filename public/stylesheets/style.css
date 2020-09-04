@@ -19,12 +19,18 @@ h3 {
 }
 h5{
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  margin-top: 1%;
 }
 
 li {
   list-style-type: none;
 }
+.frontPage {
+  border: 1px solid rgb(136, 134, 148);
+  border-radius: 5px;
+}
+
 
 /* Friends/Users */
 #regUsers {
@@ -218,6 +224,10 @@ table th {
   table {
     width: 100%;
   }
-
-
+  .frontPage {
+    margin: 0 auto;
+  }
+  .frontPage2 {
+    margin-left: 25%;
+  }
 }
