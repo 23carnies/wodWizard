@@ -22,7 +22,7 @@ function deleteGoal(req, res) {
 function update(req,res) {
     User.findById(req.user._id)
     .then((user) => {
-        user.goals.complete = req.body.complete
+        user.goals.complete = req.body.complete === 'on'
         user.save().then(() => {
             setTimeout(function(){res.redirect('/users/profile')}, 4000)
         })

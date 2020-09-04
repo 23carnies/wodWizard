@@ -140,9 +140,11 @@ span {
 
 
 /* All Wods */
-#col1, #col2, #col3, #col6{
-  width: 12%;
+#wod {
+  width: 200px;
+  margin: 0 auto;
 }
+
 #col4, #col5{
   width: 100px;
 }

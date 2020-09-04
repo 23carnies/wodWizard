@@ -2,18 +2,27 @@
 
 <h1>Welcome to wodWizard</h1>
 
-<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+<div class="carousel slide carousel-fade" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-          <img src="..." class="d-block w-100" alt="...">
+          <img src="./images/dailyWod.png" class="d-block w-100" alt="Screenshot of Daily Workout">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Get daily workouts</h5>
       </div>
       <div class="carousel-item">
-        <img src="..." class="d-block w-100" alt="...">
+        <img src="./images/goals.png" class="d-block w-100" alt="Screenshot of Goals Page">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Set goals to achieve</h5>
       </div>
       <div class="carousel-item">
-        <img src="..." class="d-block w-100" alt="...">
+        <img src="./images/profile.png" class="d-block w-100" alt="Screenshot of profile page">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Make new friends</h5>
       </div>
     </div>
   </div>
 
+  <script>
+  ('.carousel').carousel()
+  </script>
 <%- include('partials/footer') %> 

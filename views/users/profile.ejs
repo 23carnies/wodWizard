@@ -35,7 +35,7 @@
                 <% } else { %> 
                     <h4 class="userMoniker">Moniker: <%= user.moniker %></h4>
                 <% } %>
-                    <img src="<%= user.avatar %> " alt="User Photo from Google" class="userPhoto">
+                    <img width="300" src="<%= user.avatar %> ? <%= user.avatar %> : 'https://robohash.org/?set=set3>size=200x200.png'" alt="User Photo from Google" class="userPhoto">
                     <p class="card-text profile-text">Bio: <%= user.bio %></p>
             </div>
         </div>
@@ -61,7 +61,9 @@
                             <td><%= g.title %></td>
                             <td><%= g.content %></td>
                             <td><%= g.goalDate.toLocaleString().split(',')[0] %></td>
-                            <td><a action="/goals/<%= g._id %>?_method=PUT" method="POST"><button class="checkBtn"></button></a></td>
+                            <td><form action="/goals/<%= g._id %>?_method=PUT" method="POST"><input type="checkbox" class="form-control">
+                              <button>Done</button>
+                            </form></td>
                             <td><form action="/goals/<%= g._id %>?_method=DELETE" method="POST" type="submit"><button class="btn btn-dark">DELETE</button></form></td>
                         <% })  %> 
                           </tr>
