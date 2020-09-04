@@ -70,16 +70,24 @@ Wireframe of goals and stats pages
 * * AAU I should be able to select exercises from a dropdown menu to populate my workout.
 
 ### Technologies Implemented:
-* HTML
+* EJS Templating
 * CSS
 * Javascript
 * Express
+* Express Generator
 * Node.js
+* Heroku with NodeJS
+* Google OAuth 2.0
+* PassportJS
+* MongoDB
+* MongooseJS
 * Bootstrap
 
 ### Credits
-* Missy Morgan: gave several workouts.
-* There are 2 Crossfit workouts listed. They belong to Crossift.
+* Missy Morgan: programmed workouts.
+* Nancy Fernandez: programmed workouts.
+* There are Crossfit workouts listed. They belong to Crossift.
+* robohash.org for Robot Avatars.
 
 #### Open App
 [Here](https://wodwizard.herokuapp.com/)
