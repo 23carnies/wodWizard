@@ -1,9 +1,9 @@
 <%- include('../partials/header.ejs') %> 
 
 
-<div id="showWod"></div>
-<div id="regUsers" class="container-fluid">
-    <ul>Registered Users:
+
+<div id="regUsers">
+    <ul>Find Friends:
         <% users.forEach(u => { %>
           <li><img width="30" class="friendPhoto" id="avatarPic" src="<%= u.avatar %>" alt="User Photo"><a class="friends" href="/users/<%= u._id %>"><%= u.name %></a></li>
         <% }) %>

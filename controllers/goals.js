@@ -20,11 +20,11 @@ function deleteGoal(req, res) {
 }
 
 function update(req,res) {
-    req.body.complete = req.body.complete === 'on'
-    User.goals.findByIdAndUpdate(req.params.id, req.body, {new: true})
-    .then(() => {
-        res.redirect('/users/profile', {
-            title: 'Profile'
+    User.findById(req.user._id)
+    .then((user) => {
+        user.goals.complete = req.body.complete
+        user.save().then(() => {
+            setTimeout(function(){res.redirect('/users/profile')}, 4000)
         })
     })
 }

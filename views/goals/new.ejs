@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-<div class="card-body" >
+<div class="card-body goals-body" >
       <h5>Goals should be SMART: <span>S</span>pecific, <span>M</span>easurable, <span>A</span>chievable, <span>R</span>elevant, and <span>T</span>ime Bound</h5>
       <form action="/goals/new" method="POST">
 
@@ -12,11 +12,7 @@
         </label><br>
         <label>Complete By:
           <input type="date" name="goalDate" id="goalDate" class="form-control">
-        </label><br>
-        <label>More Info:
-          <textarea name="moreInfo" cols="30" rows="2" class="form-control"></textarea>
-        </label>
-          
+        </label><br><br>
    
         <button type="submit" name="Submit" class="btn btn-dark">Submit</button>
       </form>

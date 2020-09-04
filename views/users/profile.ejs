@@ -1,23 +1,23 @@
 <%- include('../partials/header') %> 
 
 <!-- This is the card itself -->
-<div class="card container-fluid" >
+<div class="card bg-light">
 
     <!-- Nav for the card -->
-    <ul class="nav nav-tabs" role="tablist">
-        <li class="nav-item">
+    <ul class="nav nav-tabs mr-auto" role="tablist">
+        <li class="nav-item profile">
           <a class="nav-link active" data-toggle="tab" id="profileInfo-tab" href="#profileInfo">Profile</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item profile">
           <a class="nav-link" data-toggle="tab" id="goalsInfo-tab" href="#goalsInfo">Goals</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item profile">
           <a class="nav-link" data-toggle="tab" id="resultsInfo-tab" href="#resultsInfo">Wod Results</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item profile">
           <a class="nav-link" data-toggle="tab" id="friendsInfo-tab" href="#friendsInfo">Friends</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item profile">
           <a class="nav-link" data-toggle="tab" id="updateInfo-tab" href="#updateInfo">Update Info</a>
         </li>
       </ul>
@@ -31,12 +31,12 @@
             <div class="card-body">
                 <!-- Actual Content Here -->
                 <% if (!user.moniker) { %>
-                    <h4 class="">Name: <%= user.name %></h4>
+                    <h4 class="userName">Name: <%= user.name %></h4>
                 <% } else { %> 
-                    <h4 class="">Moniker: <%= user.moniker %></h4>
+                    <h4 class="userMoniker">Moniker: <%= user.moniker %></h4>
                 <% } %>
                     <img src="<%= user.avatar %> " alt="User Photo from Google" class="userPhoto">
-                    <p class="card-text">Bio: <%= user.bio %></p>
+                    <p class="card-text profile-text">Bio: <%= user.bio %></p>
             </div>
         </div>
 
@@ -61,9 +61,7 @@
                             <td><%= g.title %></td>
                             <td><%= g.content %></td>
                             <td><%= g.goalDate.toLocaleString().split(',')[0] %></td>
-                            <td><form action="/goals/<%= g._id %>?_method=PUT" method="POST">
-                              <input type="checkbox" name="complete" id="complete" class="form-control"><%= g.complete ? 'checked' : '' %>
-                            </form></td>
+                            <td><a action="/goals/<%= g._id %>?_method=PUT" method="POST"><button class="checkBtn"></button></a></td>
                             <td><form action="/goals/<%= g._id %>?_method=DELETE" method="POST" type="submit"><button class="btn btn-dark">DELETE</button></form></td>
                         <% })  %> 
                           </tr>
@@ -96,7 +94,7 @@
 
         <!-- Content for Friends -->
         <div role="tabpanel" class="tab-pane" id="friendsInfo" aria-labelledby="friendsInfo-tab">
-            <div class="card-body">
+            <div class="card-body friends-body">
                 <!-- Actual Content Here -->   
                 <% if (user.friends) { %>   
               <ul>

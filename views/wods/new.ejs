@@ -12,16 +12,16 @@
         <input type="text" name="avatar" value="<%= user.avatar %>" hidden>
         <label>Workout Type:
             <select name="wodType" class="form-control">
-                <option value="strength">Strength</option>
-                <option value="cardio">Cardio</option>
-                <option value="mix">Mix</option>
+                <option value="STRENGTH">STRENGTH</option>
+                <option value="CARDIO" selected>CARDIO</option>
+                <option value="MIX">MIX</option>
             </select>
         </label><br>
         <label>Workout Style:
             <select name="wodStyle" id="wodStyle" class="form-control">
                 <option value="MAX_REPS">MAX REPS</option>
                 <option value="Rounds">X ROUNDS</option>
-                <option value="FOR_TIME">FOR TIME</option>
+                <option value="FOR_TIME" selected>FOR TIME</option>
                 <option value="EMOM">EMOM</option>
                 <option value="AMRAP">AMRAP</option>
                 <option value="E2MOM">E2MOM</option>
@@ -30,20 +30,17 @@
             </select>
         </label><br>
         <label>Movements:
-            <textarea name="movements" id="movements" cols="60" rows="5" class="form-control"></textarea>
+            <textarea name="movements" id="movements" cols="40" rows="3" class="form-control"></textarea>
         </label><br>
         <label>Modifications:
-            <textarea name="modifications" id="modifications" cols="60" rows="5" class="form-control"></textarea>
+            <textarea name="modifications" id="modifications" cols="40" rows="3" class="form-control"></textarea>
         </label><br>
-        <label>Baseline
-            <input type="checkbox" name="complete" id="baseline" class="form-control">
-          </label><br>
         <label>Duration:
             <input type="text" name="duration" 
                 id="duration" class="form-control">
-        </label>
+        </label><br>
         <input type="submit" value="Add Wod" class="btn btn-dark" id="addWod">
-    </br>
+    </br><br>
 </form>
 <a href="#" class="btn btn-dark goBack">Go Back</a>
 
