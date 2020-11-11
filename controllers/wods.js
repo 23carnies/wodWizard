@@ -1,4 +1,4 @@
-
+ 
 const Wod = require('../models/wod')
 
 module.exports = {
@@ -35,14 +35,14 @@ function create(req, res) {
 
 
 function newWod(req, res) {
-    Movement.find({}, (err, movements) => {
+    // Movement.find({}, (err, movement) => {
         res.render('wods/new', {
             title: 'Add Wod',
             user: req.user,
-            movements
+            // movements
         })
-    })
-}
+    }
+    // )}
 
 function index(req, res) {
     Wod.find({})
