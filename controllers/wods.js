@@ -1,8 +1,5 @@
 
 const Wod = require('../models/wod')
-const Movement = require('../models/movement')
-const User = require('../models/user')
-
 
 module.exports = {
     index,
@@ -22,22 +19,6 @@ function results(req, res) {
         })
     })
 }
-
-
-
-// function results(req, res) {
-//     User.findById(req.user._id)
-//         Wod.results.findByIdAndUpdate(req.params.id, req.body, {new: true} => {
-//             console.log(req.body)
-//             wod.push(req.body)
-//             wod.save().then(() => {
-//                 res.render('users/profile/#results', {
-//                     title: 'Profile'
-//                 })
-//             })
-//     })
-    
-// }
 
 function create(req, res) {
     req.body.createdBy = req.user.name

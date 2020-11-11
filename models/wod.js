@@ -12,7 +12,7 @@ const wodSchema = new Schema ({
         enum: ['MAX REPS', 'X_ROUNDS', 'FOR_TIME', 'EMOM', 'AMRAP', 'E2MOM', 'FOR_QUALITY', 'FOR_DISTANCE']},
     movements: String,
     duration: String,
-    cratedBy: String,
+    createdBy: String,
     avatar: String,
     modifications: String,
     baseline: Boolean,

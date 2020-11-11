@@ -1,16 +1,23 @@
 <%- include('partials/header') %>
 
-<h1>wodWizard</h1>
+<h1 class="front">wodWizard</h1>
 
-<div class="frontPageBox">
- 
-    <img class="frontPage" src="/images/dailyWod.png" alt="Daily wod screenshot">
-    <h5>Get new workouts daily</h5>
-
-    <img class="frontPage2" src="/images/goals.png" alt="Set new goals screenshot">
-    <h5>Set new goals</h5>
-
+<div class="front-box">
+    <p class="quote-content"><%= quoteData.quoteText %></p>
+    <% if (!quoteData.quoteAuthor.length) { %> 
+        <p class="quote-content author">- Author Unknown</p>
+    <% } else { %> 
+        <p class="quote-content author">- <%= quoteData.quoteAuthor %></p>
+    <% } %> 
 </div>
+
+<div class="front-box">
+    <h3 class="front">Welcome to wodWizard <br>
+        Please sign in<br>
+    </h3>
+    <p><a href="/auth/google" class="quote-content link">Login with Google</a></p>
+</div>
+    
 
 
 <%- include('partials/footer') %> 

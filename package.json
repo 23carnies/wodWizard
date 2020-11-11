@@ -20,6 +20,7 @@
     "morgan": "~1.9.0",
     "passport": "^0.4.1",
     "passport-google-oauth": "^2.0.0",
-    "quickchart-js": "^1.0.2"
+    "quickchart-js": "^1.0.2",
+    "request": "^2.88.2"
   }
 }
