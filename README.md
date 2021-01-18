@@ -69,7 +69,7 @@ Wireframe of goals and stats pages
 * User should be able to start a timer in app that corresponds with the selected workout
 * User should be able to login with Fitbit and see authorized info from that API
 * User should have a percentage calculator for weighted workouts
-* * AAU I should be able to select exercises from a dropdown menu to populate my workout.
+* AAU I should be able to select exercises from a dropdown menu to populate my workout.
 
 ### Technologies Implemented:
 * EJS Templating
@@ -84,6 +84,7 @@ Wireframe of goals and stats pages
 * MongoDB
 * MongooseJS
 * Bootstrap
+* REST API from [forismatic](https://forismatic.com/en/api/)
 
 ### Credits
 * Missy Morgan: programmed workouts.
